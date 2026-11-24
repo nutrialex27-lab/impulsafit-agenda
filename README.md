@@ -1,40 +1,36 @@
-# ImpulsaFit Agenda
+# ImpulsaFit Agenda · Android
 
-Agenda gratuita para clientes, reservas de EMS, entrenamiento personal y demos. Diseño coral y azul noche, con icono propio de calendario y reloj.
+**IF Agenda** es la edición instalable de la agenda de ImpulsaFit para Android 8 o posterior. Incluye la agenda dentro de la aplicación y guarda los registros en el móvil. No necesita acceder a una página de ChatGPT para funcionar.
 
-## Abrir e instalar la aplicación
+## Descargar e instalar
 
-**[Abrir ImpulsaFit Agenda](https://impulsafit-agenda.nutrialex-27.chatgpt.site)**
+Entra en **[Releases](https://github.com/nutrialex27-lab/impulsafit-agenda/releases)** y descarga **ImpulsaFit_Agenda_Android.apk** de la versión Android 0.2.0-beta.1. Abre el APK descargado para iniciar la instalación. El icono se llama **IF Agenda** y utiliza el calendario coral con reloj.
 
-En Android, abre el enlace con Chrome y usa el menú ⋮ → Añadir a pantalla de inicio / Instalar aplicación. En ordenador, usa la opción de instalar de Chrome o Edge.
-
-La edición web es privada: utiliza tu cuenta de ChatGPT. Las citas se guardan en esa cuenta y pueden consultarse en distintos dispositivos.
-
-## Descargar y probar sin cuenta
-
-Descarga **[ImpulsaFit_Agenda.html](ImpulsaFit_Agenda.html)** y ábrelo con un navegador. La edición descargable contiene el programa, estilos e icono, sin dependencias externas para ejecutarla.
-
-En esta edición los datos se guardan en el navegador del dispositivo. Utiliza Ajustes → Descargar copia de seguridad para conservar los registros o trasladarlos a otra edición. La copia descargable y la edición web no se sincronizan automáticamente.
+Este repositorio es privado; GitHub puede pedirte iniciar sesión para descargar el archivo. Después de instalar, la agenda se abre desde su propio icono.
 
 ## Código editable
 
-**[ImpulsaFit_Agenda_Codigo.zip](ImpulsaFit_Agenda_Codigo.zip)** contiene el código completo de esta versión: componentes, estilos, guardado local, API de la edición web, esquema y migraciones, pruebas y archivos de instalación PWA.
-
-Descomprime el ZIP y consulta su README. Para regenerar el HTML después de editar el código: `npm ci` y `npm run build:portable`. La edición local se genera en `public/ImpulsaFit_Agenda.html`.
-
-Este repositorio conserva una entrega de la aplicación y su código en ZIP. No configura por sí solo una sincronización o despliegue automático con la edición web.
+**[ImpulsaFit_Agenda_Codigo_Android.zip](ImpulsaFit_Agenda_Codigo_Android.zip)** contiene el proyecto completo y la carpeta `android-app/`, con el contenedor Android, instrucciones y scripts de compilación. La clave privada de firma se conserva por separado y no está incluida en el repositorio ni en la distribución.
 
 ## Funciones
 
-- Agenda diaria, semanal y mensual.
-- Clientes y reservas semanales repetidas.
-- Detección de horarios solapados.
-- Mensajes editables con fecha, hora y condiciones de cancelación.
-- Plazos editables: recordatorio inicial de 48 horas y cancelación de 24 horas.
-- Copias JSON y exportación al calendario con alarmas.
+- Clientes, agenda diaria, semanal y mensual.
+- Reservas semanales repetidas y detección de horarios solapados.
+- Política de cancelación editable y mensajes de WhatsApp preparados con fecha, hora y condiciones.
+- Copias JSON mediante el selector de archivos de Android y restauración desde un archivo elegido.
+- Exportación ICS para llevar las reservas al calendario.
+- Diseño coral y azul noche e icono propio.
 
-## WhatsApp
+Los WhatsApp requieren pulsar Enviar en WhatsApp y confirmar manualmente el envío al volver. No hay envío automático ni APIs de pago.
 
-Los mensajes se preparan en la aplicación. El entrenador debe pulsar Enviar en WhatsApp y confirmar manualmente el envío al volver. No hay envíos automáticos ni APIs de pago.
+## Datos y actualizaciones
 
-El repositorio y las descargas no contienen registros de clientes. Los datos de uso no se suben a GitHub.
+Las reservas se guardan en el almacenamiento privado de la aplicación en ese móvil. No se suben a GitHub ni se sincronizan automáticamente con la edición web o con otro dispositivo. Haz copias JSON desde Ajustes para trasladarlas o conservarlas fuera del móvil. Guarda una copia antes de desinstalar: Android elimina los datos de las aplicaciones desinstaladas.
+
+Las actualizaciones con el mismo paquete y la misma firma conservan los datos. Los cambios del repositorio no se despliegan automáticamente.
+
+## Estado de esta entrega
+
+Versión de prueba. Se verificaron compilación, recursos, actividad de inicio, firma APK v2/v3 y estructura del paquete. La interfaz y el almacenamiento local ya se probaron en navegador. Falta comprobar la instalación y el uso en un dispositivo Android físico o emulador.
+
+La edición HTML anterior permanece disponible como copia para abrir en navegador.
