@@ -1,38 +1,30 @@
-# ImpulsaFit Agenda · Android
+# IF Agenda · Android 0.4.0 beta
 
-IF Agenda es la aplicación de reservas de ImpulsaFit en Condes Wellness & Fitness, para Android 8 o posterior. Funciona en el móvil sin acceder a ChatGPT. Repositorio público y descarga sin iniciar sesión.
+Agenda de ImpulsaFit en Condes Wellness & Fitness. Repositorio público; descarga sin iniciar sesión.
 
-## Descargar e instalar
+[Descargar actualización Android (.APK)](https://github.com/nutrialex27-lab/impulsafit-agenda/releases/download/v0.4.0-beta.1/ImpulsaFit_Agenda_Android.apk)
 
-[Descargar IF Agenda para Android (.APK), versión 0.3.0 beta](https://github.com/nutrialex27-lab/impulsafit-agenda/releases/download/v0.3.0-beta.1/ImpulsaFit_Agenda_Android.apk)
+Instala encima de la versión anterior sin desinstalarla. Se mantiene la firma y el paquete para conservar los registros. Haz antes una copia JSON desde Ajustes. Android 8 o posterior.
 
-Abre el APK e instala la actualización sobre la versión anterior, sin desinstalarla. Mantiene el paquete y la firma para conservar los registros. Haz una copia JSON desde Ajustes antes de actualizar.
+## Confirmar y cancelar directamente en la agenda
 
-## Confirmar o cancelar
+1. Guarda una reserva. Con Respuestas directas activado, la app prepara un enlace individual con la cita y la normativa de Condes.
+2. Envía el mensaje inicial por WhatsApp. En Android puede abrirse ya preparado al guardar; siempre tienes que pulsar Enviar. No hay envío automático mediante una API de pago.
+3. El cliente abre el enlace y pulsa Confirmar o Cancelar. La respuesta se guarda directamente: no tiene que enviar otro WhatsApp y no tienes que registrarla a mano.
+4. La app recoge respuestas con Internet al abrirse, al recuperar el foco y cada 45 segundos mientras está visible. No hay notificaciones push ni actualización en segundo plano garantizada.
 
-1. Configura tu número en Ajustes → Tu número de WhatsApp para respuestas, o al preparar el primer mensaje.
-2. Envía la reserva o el recordatorio desde tu WhatsApp. El texto identifica las normas como normativa del centro Condes Wellness & Fitness.
-3. El cliente recibe dos enlaces: CONFIRMAR SESIÓN y CANCELAR SESIÓN. Elige uno y pulsa Enviar en WhatsApp; la respuesta llega a tu número.
-4. En la ficha de la reserva, registra Cliente confirma o Cliente cancela y la hora en que llegó la respuesta. La agenda no lee WhatsApp automáticamente.
+Sin respuesta, la reserva se mantiene confirmada al vencer el plazo. Una ausencia o cancelación fuera de plazo consume sesión. La hora de respuesta la fija el servidor; las realizadas, ausencias y cancelaciones fuera de plazo se contabilizan sin gestionar un saldo de bonos.
 
-Al vencer el plazo de cancelación, una reserva sin respuesta se muestra como Confirmada · sin respuesta. El mensaje explica que el silencio no cancela la cita y que una ausencia o cancelación fuera de plazo consume una sesión. Al registrar realizada, cancelación fuera de plazo o ausencia se contabiliza una sesión consumida; no se gestiona un saldo de bonos ni hay cobros o descuentos automáticos.
+En Ajustes puedes desactivar Respuestas directas para volver al flujo manual por WhatsApp. Las reservas semanales repetidas preparan el aviso de la primera sesión; comunica las otras desde sus fichas.
 
-## Otras funciones
+## Datos y código editable
 
-- Clientes, agenda diaria, semanal y mensual.
-- Reservas semanales repetidas y detección de horarios solapados.
-- Normativa y plazos editables, con condiciones guardadas por reserva.
-- Copias JSON y exportación ICS mediante el selector de archivos de Android.
-- Diseño coral y azul noche e icono propio.
+Los nombres, teléfonos y notas se guardan en tu agenda y no se publican. El servicio de respuestas recibe solo fecha, duración, servicio, ubicación pública y normativa de cada cita. Cada enlace permite gestionar una única reserva. Las copias JSON contienen datos y accesos para recuperar su gestión; guárdalas en privado.
 
-No utiliza APIs de pago ni suscripciones externas. Los enlaces de WhatsApp preparan mensajes; el envío y el registro son manuales.
+[ImpulsaFit_Agenda_Codigo_Android.zip](ImpulsaFit_Agenda_Codigo_Android.zip) contiene la app, el contenedor Android y response-service/ con el servicio público, pruebas y migraciones. Las claves de firma y credenciales de publicación no se incluyen.
 
-## Código editable y datos
-
-[ImpulsaFit_Agenda_Codigo_Android.zip](ImpulsaFit_Agenda_Codigo_Android.zip) contiene el proyecto completo y android-app/, con scripts e instrucciones de compilación. La clave privada de firma se conserva por separado y no se publica.
-
-Los clientes y reservas se guardan en el almacenamiento privado de la aplicación de tu móvil. No se suben a GitHub ni se sincronizan automáticamente con otros dispositivos o con la edición web. Guarda copias JSON desde Ajustes. Desinstalar elimina los datos locales; actualiza sobre la app existente.
+No se utilizan servicios externos de pago para enviar WhatsApp. El alojamiento depende de los límites y disponibilidad de la cuenta; no se promete gratuidad perpetua de terceros.
 
 ## Verificación
 
-Versión beta: compilación, firma APK v2/v3, paquete y versión verificados. Once pruebas de lógica y comprobación de tipos superadas. Probada en navegador la generación de opciones, importación de copias y cancelación por fecha de recepción. La instalación y el uso nativo de esta actualización requieren prueba en un dispositivo Android físico.
+17 pruebas de agenda y sincronización, 7 pruebas del servicio con SQLite, comprobación de tipos, compilación web y firma APK v2/v3 superadas. Verificado en navegador el flujo publicado: cliente confirma/cancela y la agenda actualiza su estado sin registro manual. La instalación y la conexión nativa de la versión beta deben probarse en Android físico.
